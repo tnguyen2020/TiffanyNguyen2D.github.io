@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="main.css" href="main.css"></link>
     <title>Document</title>
 </head>
 <body>
+    Hello , adding Rive here
+    <canvas id="canvas" width="500" height="500"></canvas>
+   
+    <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+    <script>
+        const r = new rive.Rive({
+            src: "3posts.riv",
+            // OR the path to a discoverable and public Rive asset
+            // src: '/public/example.riv',
+            canvas: document.getElementById("canvas"),
+            autoplay: true,
+            stateMachines: "bumpy",
+            onLoad: () => {
+              r.resizeDrawingSurfaceToCanvas();
+            },
+        });
+    </script>
     
 </body>
 </html>
